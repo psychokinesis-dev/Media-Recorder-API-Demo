@@ -16,7 +16,11 @@ if (nodes.length > 0) {
 
 	var query = location.search.split('domain=');
 	if (query.length > 1) {
-		play(genMetaURL(query[1]));
+		var domain = query[1];
+		var domainElement = document.querySelector('#domain');
+		domainElement.value = domain;
+
+		play(genMetaURL(domain));
 	} else {
 		log('Psychokinesis is ready.');
 	}
